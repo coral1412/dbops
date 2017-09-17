@@ -10,14 +10,17 @@
     <link href="{% static 'bootstrap/css/bootstrap.css' %}" rel="stylesheet" type="text/css">
     <script type="text/javascript" src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
     <script type="text/javascript" src="{% static 'bootstrap/js/bootstrap.js' %}"></script>
+    <!-- 引入 Bootstrap Paginator-->
+    <link href="{% static 'bootstrap-paginator/css/bootstrap.css' %}" rel="stylesheet" type="text/css">
     <title>dbuserinfo</title>
 </head>
 <body>
-<div>
+<div class="table-responsive table-container">
 {#    class="container"#}
 {#    <h1>dbuserinfo</h1>#}
 
-<table>
+<table class="table table-bordered table-container table-view">
+    <caption>生产数据库应用账号览表</caption>
     <thead>
     <tr>
         <th>项目名</th>
@@ -25,7 +28,7 @@
         <th>数据库IP</th>
         <th>数据库名</th>
         <th>数据库用户名</th>
-        <th>数据库密码</th>
+{#        <th>数据库密码</th>#}
         <th>数据库授权IP</th>
         <th>数据库授权详情</th>
         <th>账号创建时间</th>
@@ -40,7 +43,7 @@
         <td>{{ user.dbhost }}</td>
         <td>{{ user.dbname }}</td>
         <td>{{ user.ser_name }}</td>
-        <td>{{ user.ser_passwd }}</td>
+{#        <td>{{ user.ser_passwd }}</td>#}
         <td>{{ user.grant_host }}</td>
         <td>{{ user.dbprivileges }}</td>
         <td>{{ user.createtime }}</td>
