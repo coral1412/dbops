@@ -102,8 +102,8 @@ DATABASES={
         'NAME':'dbops',
         'USER':'dbops',
         'PASSWORD':'passwd',
-        'HOST':'192.168.99.3',
-        'PORT':'3306',
+        'HOST':'192.168.10.126',
+        'PORT':'3307',
     }
 }
 
