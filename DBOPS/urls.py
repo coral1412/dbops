@@ -21,4 +21,5 @@ urlpatterns = [
     url(r'^$',hello),
     url(r'^admin/', admin.site.urls),
     url(r'^dbuserinfo/',dbuserinfo_list),
+    url(r'^dbinfo/',dbinfo_list),
 ]

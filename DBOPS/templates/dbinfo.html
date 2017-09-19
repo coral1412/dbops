@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="http://apps.bdimg.com/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <!-- 引入 Bootstrap -->
+    <link href="{% static 'bootstrap/css/bootstrap-responsive.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'bootstrap/css/bootstrap.css' %}" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'bootstrap/js/bootstrap.js' %}"></script>
+    <title>数据库用户</title>
+
+    <!-- 区分IE，使用不同版本的公共JS库 -->
+    <!--[if !IE]>-->
+    <script src="http://libs.baidu.com/jquery/2.1.1/jquery.min.js"></script>
+    <!-- <![endif]-->
+
+    <!--[if IE]>
+    <script src="http://libs.baidu.com/jquery/1.11.1/jquery.min.js"></script>
+    <![endif]-->
+
+    <!-- 公共JS库加载失败了，则加载自家的 -->
+    <!--[if !IE]>-->
+    <script type="text/javascript">
+        window.jQuery || document.write("<script src='../js/jquery.min.js'>"+"<"+"/script>");
+    </script>
+    <!-- <![endif]-->
+
+    <!--[if IE]>
+    <script type="text/javascript">
+        window.jQuery || document.write("<script src='../js/jquery1x.min.js'>"+"<"+"/script>");
+    </script>
+    <![endif]-->
+
+    <!-- 对移动设备加载优化js -->
+    <script type="text/javascript">
+        if('ontouchstart' in document.documentElement) document.write("<script src='../js/jquery.mobile.custom.min.js'>"+"<"+"/script>");
+    </script>
+
+    <!-- 引入pager.js-->
+    <link href="Pager.css" rel="stylesheet" type="text/css" />
+    <script src="../jquery/dist/jquery.min.js" type="text/javascript"></script>
+    <script src="jquery.pager.js" type="text/javascript"></script>
+</head>
+<body>
+<div class>
+{#    class="container"#}
+{#    <h1>dbuserinfo</h1>#}
+
+<table style="table-layout:auto" data-toggle="table"  class="table table-bordered">
+    <caption><b>生产数据库统计表</caption>
+	
+    <thead>
+    <tr>
+        <th >项目名</th>
+        <th>数据库负责人</th>
+        <th>数据库IP</th>
+        <th>所含数据库</th>
+        <th>root密码</th>
+        <th>账号创建时间</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for dbs in dbs %}
+    <tr>
+        <td>{{ dbs.t_project_name }}</td>
+        <td>{{ dbs.t_owner }}</td>
+        <td>{{ dbs.t_dbhost }}</td>
+        <td>{{ dbs.t_dbs }}</td>
+        <td>{{ dbs.t_rootpasswd }}</td>
+        <td>{{ dbs.t_createtime }}</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+</div>
+</body>
+</html>

@@ -10,3 +10,7 @@ def hello(request):
 def dbuserinfo_list(request):
     users=dbuserinfo.objects.all()
     return render(request,'userinfo.html',{'users':users})
+
+def dbinfo_list(request):
+    dbs=dbinfo.objects.all()
+    return  render(request,'dbinfo.html',{'dbs':dbs})
