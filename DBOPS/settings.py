@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'dbopsModel',
     'bootstrap_toolkit',
     # 'django_admin_bootstrapped',
+    'mymetadata',
 ]
 
 MIDDLEWARE = [
@@ -60,7 +61,8 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            os.path.join(BASE_DIR,'DBOPS\\templates'),
+            os.path.join(BASE_DIR,'DBOPS/templates'),
+            #os.path.join(BASE_DIR,'DBOPS\\templates'),    #Windows
             # 'D:\\github\\DBOPS\\DBOPS'
         ],
         'APP_DIRS': True,
@@ -103,7 +105,7 @@ DATABASES={
         'USER':'dbops',
         'PASSWORD':'passwd',
         'HOST':'192.168.10.126',
-        'PORT':'3307',
+        'PORT':'3456',
     }
 }
 

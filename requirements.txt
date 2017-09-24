@@ -37,7 +37,7 @@ kombu==3.0.37
 Markdown==2.6.7
 MarkupSafe==0.23
 mock==2.0.0
-MySQL-python==1.2.3
+#MySQL-python==1.2.3
 olefile==0.43
 openpyxl==2.4.0
 paramiko==1.17.2
